@@ -1,0 +1,56 @@
+.create-container {
+  max-width: 800px;
+  margin: 3rem auto;
+  background: #ffffff;
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+}
+
+.create-container h3 {
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  color: #222;
+  text-align: center;
+}
+
+.form-label {
+  font-weight: 500;
+  margin-bottom: 0.25rem;
+  color: #333;
+}
+
+.form-control,
+.form-select {
+  border-radius: 0.5rem;
+  padding: 0.6rem 1rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  transition: border-color 0.3s;
+}
+
+.form-control:focus,
+.form-select:focus {
+  border-color: #fb0e12;
+  box-shadow: 0 0 0 0.2rem rgba(251, 14, 18, 0.15);
+}
+
+.btn-dark.add-btn {
+  background-color: #fb0e12;
+  border: none;
+  padding: 0.6rem 2rem;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  transition: background-color 0.3s;
+  display: block;
+  margin: 1rem auto 0;
+}
+
+.btn-dark.add-btn:hover {
+  background-color: #e00c10;
+}
+
+.invalid-feedback,
+.valid-feedback {
+  font-size: 0.875rem;
+}

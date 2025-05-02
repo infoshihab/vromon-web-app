@@ -1,63 +1,175 @@
 <style>
-  .search-input {
-    border-radius: 25px;
-    padding: 0.5rem 3rem 0.5rem 3rem;
-    font-size: 1rem;
+  .navbar-custom {
+    background-color: #ffffff;
+    border-bottom: 1px solid #dee2e6;
+    padding: 0.5rem 1rem;
+    position: sticky;
+    top: 0;
+    z-index: 1030;
   }
+
+  .navbar-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  .navbar-brand {
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    font-size: 1.5rem;
+    color: #fb0e12;
+    text-decoration: none;
+    gap: 0.4rem;
+  }
+
+  .navbar-brand i {
+    color: #fb0e12;
+  }
+
+  .search-wrapper {
+    flex: 1 1 auto;
+    display: flex;
+    justify-content: center;
+    max-width: 500px;
+    min-width: 200px;
+    padding: 0 1rem;
+  }
+
+  .search-form {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    border-radius: 999px;
+    background-color: #fff;
+    /* box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07); */
+    padding: 0.5rem 1rem;
+  }
+
+  .search-form input {
+    border: none;
+    background: transparent;
+    flex: 1;
+    padding: 0.4rem 0.5rem;
+    font-size: 1rem;
+    outline: none;
+  }
+
   .btn-search {
     background-color: #fb0e12;
+    border: none;
     color: white;
-    border-radius: 25px;
-    pad: 0 1rem 0 1rem;
+    padding: 0.4rem 0.8rem;
+    border-radius: 999px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
   }
+
   .btn-search:hover {
-    background-color: #fb0e12;
-    color: white;
+    background-color: #e00c10;
   }
-  .btn-search i {
-    display: inline;
-    margin-right: 0.5rem;
+
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .nav-links a {
+    color: #333;
+    text-decoration: none;
+    font-weight: 500;
+  }
+
+  .nav-links a:hover {
+    color: #fb0e12;
+  }
+
+  .navbar-toggler {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+  }
+
+  @media (max-width: 768px) {
+    .navbar-container {
+      flex-direction: column;
+      align-items: stretch;
+    }
+
+    .navbar-top-row {
+      display: flex;
+      width: 100%;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .search-wrapper {
+      width: 100%;
+      margin-top: 0.5rem;
+    }
+
+    .nav-links {
+      flex-direction: column;
+      align-items: flex-start;
+      width: 100%;
+      display: none;
+      margin-top: 0.5rem;
+    }
+
+    .nav-links.show {
+      display: flex;
+    }
+
+    .navbar-toggler {
+      display: inline-block;
+    }
   }
 </style>
 
-<nav class="navbar navbar-expand-md bg-body-light border-bottom sticky-top">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="/listing"
-      ><i class="fa-solid fa-podcast" style="color: #fb0e12"></i
-    ></a>
-    <button
-      class="navbar-toggler"
-      type="button"
-      data-bs-toggle="collapse"
-      data-bs-target="#navbarNavAltMarkup"
-    >
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-      <div class="navbar-nav">
+<nav class="navbar-custom">
+  <div class="navbar-container">
+    <!-- Top Row -->
+    <div class="navbar-top-row">
+      <a class="navbar-brand" href="/listing">
+        <i class="fa-solid fa-podcast"></i> Vromon
+      </a>
+
+      <button
+        class="navbar-toggler"
+        onclick="document.querySelector('.nav-links').classList.toggle('show')"
+      >
+        <i class="fa-solid fa-bars"></i>
+      </button>
+    </div>
+
+    <!-- Search Always Centered -->
+    <div class="search-wrapper">
+      <form class="search-form shadow-sm">
+        <input type="text" placeholder="Start your search" />
+        <button class="btn-search" type="submit">
+          <i class="fa-solid fa-magnifying-glass"></i> Search
+        </button>
+      </form>
+    </div>
+
+    <!-- Navigation Links -->
+    <div class="nav-links">
+      <div class="navbar-nav me-auto mt-2 mt-md-0">
         <a class="nav-link" href="/listing">Explore</a>
       </div>
-      <div class="navbar-nav ms-auto">
-        <form class="d-flex" role="search">
-          <input
-            class="form-control me-2 search-input"
-            type="search"
-            placeholder="Search destinations"
-          />
-          <button class="btn btn-search" type="submit">
-            <i class="fa-solid fa-magnifying-glass"></i>Search
-          </button>
-        </form>
-      </div>
-      <div class="navbar-nav ms-auto">
-        <a class="nav-link" href="/listing/new">Airbnb your home</a>
-        <% if(!currUser) {%>
-        <a class="nav-link" href="/signup"><b>Sign Up</b></a>
-        <a class="nav-link" href="/login"><b>Log in</b></a>
-        <%}%> <% if(currUser) {%>
-        <a class="nav-link" href="/logout"><b>Log Out</b></a>
-        <% } %>
-      </div>
+      <a href="/listing/new">Airbnb your home</a>
+      <% if (!currUser) { %>
+      <a href="/signup"><b>Sign Up</b></a>
+      <a href="/login"><b>Log In</b></a>
+      <% } else { %>
+      <a href="/logout"><b>Log Out</b></a>
+      <% } %>
     </div>
   </div>
 </nav>

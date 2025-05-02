@@ -1,0 +1,30 @@
+.listing-img-fixed {
+  height: 400px;
+  object-fit: cover;
+  width: 100%;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+}
+#map {
+  height: 300px;
+  width: 100%;
+  max-width: 720px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.starability-slot input[type="radio"] {
+  margin-right: 4px;
+}
+
+.card {
+  border: none;
+}
+
+.btn {
+  border-radius: 8px;
+}
+
+textarea.form-control {
+  resize: none;
+}

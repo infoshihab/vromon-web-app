@@ -1,0 +1,87 @@
+#filters-bar {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #dee2e6;
+  padding: 1rem 0;
+  gap: 1rem;
+  overflow: hidden;
+  flex-wrap: nowrap;
+}
+
+.scroll-btn {
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 50%;
+  width: 2rem;
+  height: 2rem;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.filters-container {
+  flex: 1;
+  overflow: hidden;
+}
+
+#filters-wrapper {
+  overflow-x: auto;
+  scrollbar-width: none;
+  padding: 0 0.5rem;
+}
+
+#filters-wrapper::-webkit-scrollbar {
+  display: none;
+}
+
+#filters {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 0.5rem;
+  scroll-behavior: smooth;
+  align-items: center;
+}
+
+.filter {
+  text-align: center;
+  flex: 0 0 auto;
+  width: 80px;
+  opacity: 0.7;
+  transition: opacity 0.3s ease;
+}
+
+.filter:hover {
+  opacity: 1;
+  cursor: pointer;
+}
+
+.filter p {
+  font-size: 0.85rem;
+  margin-top: 0.25rem;
+}
+
+.filter a {
+  text-decoration: none;
+  color: black;
+}
+
+.tax-toggle {
+  border: 1px solid black;
+  border-radius: 1rem;
+  height: 3rem;
+  padding: 0 1rem;
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+@media (max-width: 768px) {
+  .tax-toggle {
+    font-size: 0.75rem;
+    padding: 0 0.5rem;
+  }
+}

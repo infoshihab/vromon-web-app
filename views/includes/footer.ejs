@@ -1,14 +1,97 @@
-<footer>
-  <div class="f-info">
-    <div class="f-info-socails">
-      <i class="fa-brands fa-square-facebook"></i>
-      <i class="fa-brands fa-square-instagram"></i>
-      <i class="fa-brands fa-square-twitter"></i>
+<footer class="footer text-light py-5 red-theme-footer">
+  <div class="container">
+    <div class="row justify-content-between align-items-start">
+      <!-- Brand Info -->
+      <div class="col-md-4 mb-4 mb-md-0">
+        <h4 class="fw-bold brand-highlight">Vromon</h4>
+        <p class="small text-muted">
+          Discover destinations, book listings, and explore the world — your
+          adventure starts here.
+        </p>
+      </div>
+
+      <!-- Quick Links -->
+      <div class="col-md-3 mb-4 mb-md-0">
+        <h6 class="fw-semibold mb-3 text-uppercase brand-highlight">
+          Quick Links
+        </h6>
+        <ul class="list-unstyled">
+          <li><a href="/privacy" class="footer-link">Privacy Policy</a></li>
+          <li><a href="/terms" class="footer-link">Terms & Conditions</a></li>
+          <li><a href="/contact" class="footer-link">Contact Us</a></li>
+          <li><a href="/about" class="footer-link">About Vromon</a></li>
+        </ul>
+      </div>
+
+      <!-- Social Media -->
+      <div class="col-md-4 text-md-end">
+        <h6 class="fw-semibold mb-3 text-uppercase brand-highlight">
+          Follow Us
+        </h6>
+        <div class="d-flex justify-content-md-end justify-content-center gap-3">
+          <a href="#" class="footer-social"
+            ><i class="fa-brands fa-facebook-f"></i
+          ></a>
+          <a href="#" class="footer-social"
+            ><i class="fa-brands fa-instagram"></i
+          ></a>
+          <a href="#" class="footer-social"
+            ><i class="fa-brands fa-twitter"></i
+          ></a>
+        </div>
+        <p class="small text-muted mt-3">
+          Stay connected for exclusive travel stories & updates!
+        </p>
+      </div>
     </div>
-    <div class="f-info-brand">&copy;Vromon Private Limited</div>
-    <div class="f-info-links">
-      <a href="/privacy">Privacy</a>
-      <a href="/terms">Terms</a>
+
+    <hr class="my-4" style="border-color: #6c757d" />
+
+    <div class="text-center small text-muted">
+      &copy; <%= new Date().getFullYear() %> Vromon Private Ltd. | Built for
+      explorers
     </div>
   </div>
 </footer>
+
+<style>
+  .red-theme-footer {
+    background-color: #f9f0f0; /* Dark wine/red-black background */
+  }
+
+  .brand-highlight {
+    color: #dc3545; /* Bootstrap red */
+  }
+
+  .footer-link {
+    color: #79797a;
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: all 0.3s ease-in-out;
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+
+  .footer-link:hover {
+    color: #dc3545;
+    padding-left: 6px;
+  }
+
+  .footer-social {
+    font-size: 1.4rem;
+    color: #adb5bd;
+    transition: color 0.3s ease, transform 0.3s ease;
+  }
+
+  .footer-social:hover {
+    color: #dc3545;
+    transform: scale(1.15);
+  }
+
+  @media (max-width: 767px) {
+    .text-md-end {
+      text-align: center !important;
+      margin-top: 1.5rem;
+    }
+  }
+</style>
